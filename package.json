@@ -1,8 +1,8 @@
 {
-  "name": "react",
+  "name": "react-tab-card",
   "version": "1.0.0",
-  "description": "React example starter project",
-  "keywords": ["react", "starter"],
+  "description": "A react compound component render a card with tab switcher and content",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "react": "16.12.0",
@@ -13,6 +13,7 @@
     "typescript": "3.3.3"
   },
   "scripts": {
+    "build:style": "tailwind build src/styles/styles.css -o src/styles.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
