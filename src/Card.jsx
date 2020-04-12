@@ -3,7 +3,7 @@ import React from "react";
 const TabContext = React.createContext();
 
 function CardTab({ children }) {
-  const [activeTab, setActiveTab] = React.useState(null);
+  const [activeTab, setActiveTab] = React.useState(1);
 
   const setTab = tab => {
     setActiveTab(tab);
@@ -16,10 +16,22 @@ function CardTab({ children }) {
   );
 }
 
-function TabSwitcher({ children, tabId }) {
-  const { setTab } = React.useContext(TabContext);
+function TabSwitcher({
+  children,
+  tabId,
+  activeClass = "border-b-2 border-gray-600"
+}) {
+  const { activeTab, setTab } = React.useContext(TabContext);
+
   const onClick = () => setTab(tabId);
-  return <button onClick={onClick}>{children}</button>;
+
+  const className = ["mr-2"];
+  if (activeTab === tabId) className.push(activeClass);
+  return (
+    <button className={className.join(" ")} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 function TabContent({ children, id }) {

@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="m-8 bg-gray-200 rounded-sm shadow-lg">
       <CardTab>
-        <div className="header">
+        <div>
           <TabSwitcher tabId={1}>
             <div className="p-2">Tab 1</div>
           </TabSwitcher>
